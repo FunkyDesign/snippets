@@ -1,0 +1,18 @@
+/**
+ * Translation
+ */
+add_filter( 'gettext', function ( $strings ) {
+	/**
+	 * Holding translations/changes.
+	 * 'to translate' => 'the translation or rewording'
+	 */
+	$text = array(
+		'Original text' => 'Translated text',
+		'Another Original Text'   => 'Translated Text',
+		'etc'   => 'etc translated',
+	);
+
+	$strings = str_ireplace( array_keys( $text ), $text, $strings );
+
+	return $strings;
+}, 20 );
